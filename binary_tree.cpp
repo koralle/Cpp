@@ -106,7 +106,7 @@ void tree_insert(Tree *T, Node *z){
     Node *y = NULL;
     Node *x = T->root;
 
-    // 同一のkeyを持つ節点は気に導入しない
+    // 同一のkeyを持つ節点は2分探索木に導入しない
     if(tree_search(T->root, z->key) != NULL) {
         cout << "Node " << z->key << " is already existed." << endl;
         if(z != NULL) {
@@ -198,6 +198,7 @@ void COMMAND_INSERT(){
         /*    Tree *T = */ binary_tree,
         /*    Node *z = */ node
     );
+    return;
 }
 
 void COMMAND_DELETE(){
@@ -211,7 +212,10 @@ void COMMAND_DELETE(){
         /*   int k = */ _key
     );
 
+    // 節点が見つからなかった
     if(result == NULL) cout << "Not found." << endl;
+
+    // 節点の削除
     else tree_delete(
         /* Tree *T = */ binary_tree,
         /* Node *z = */ result
@@ -228,8 +232,11 @@ void COMMAND_SEARCH(){
         /*   int k = */ _key
     );
 
+    // 節点が見つからなかった
     if(result == NULL) cout << "Not found." << endl;
-    else cout << result->key << endl;
+
+    // 節点が見つかった
+    else cout << "Node " << result->key << "has found." << endl;
 
     return;
 }
