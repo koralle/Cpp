@@ -4,6 +4,16 @@
 using namespace std;
 
 // Node型の定義
+// ===================================
+// key: int
+//      節点のkey
+// left: Node*
+//      左の子へのポインタ
+// right: Node*
+//      右の子へのポインタ
+// parent: Node*
+//      親へのポインタ
+// ===================================
 typedef struct _Node{
     int key;
     struct _Node *left;
@@ -12,12 +22,15 @@ typedef struct _Node{
 }Node;
 
 // 2分探索木の根 ###############################
+// ==================================
+// root: Node*
+//       2分探索木の根へのポインタ
+// ==================================
 typedef struct _Tree{
     Node *root;
 }Tree;
 
 Tree *binary_tree = new Tree;
-// #############################################
 
 // コマンド ###################################
 typedef enum _command{
