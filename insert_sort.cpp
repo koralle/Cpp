@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
-// 挿入ソート
+void insertion_sort(vector<int> &v, int n);
+
+// 挿入ソート(昇順)
+// 例: [4, 3, 9, 1, 2] => [1, 2, 3, 4, 9]
 void insertion_sort(vector<int> &v, int n){
     // v[i]をソート済みの列v[0..i-1]に追加する
     for(int i = 1; i < n; i++){
