@@ -16,8 +16,8 @@ void insertion_sort(vector<int> &v, int n){
         int j = i-1;
         while(j >= 0) {
             // さかのぼる途中で挿入する位置が確定
-            if(v[j] <= key) break;
-
+            // もし降順にソートしたいなら次の行の不等号を逆にする
+            if(v[j] <= key) break; 
             // v[j]を一つ後ろにずらす
             v[j+1] = v[j];
             j--;
